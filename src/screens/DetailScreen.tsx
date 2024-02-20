@@ -23,7 +23,9 @@ const DetailScreen = ({route}: Props) => {
   return (
     <ScrollView>
       <View style={styles.imageContainer}>
-        <Image source={{uri: posterUri}} style={styles.posterImage} />
+        <View style={styles.imageBorder}>
+          <Image source={{uri: posterUri}} style={styles.posterImage} />
+        </View>
       </View>
 
       <View style={styles.marginContainer}>
@@ -38,10 +40,9 @@ export default DetailScreen;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    overflow: 'hidden',
     width: '100%',
     height: screenHeight * 0.7,
-    borderRadius: 18,
+    borderRadius: 25,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -50,6 +51,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.9,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  imageBorder: {
+    flex: 1,
+    overflow: 'hidden',
     borderBottomEndRadius: 25,
     borderBottomStartRadius: 25,
   },
