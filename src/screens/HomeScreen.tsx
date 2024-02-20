@@ -1,16 +1,15 @@
-import React from "react";
-import { ActivityIndicator, Button, Text, View } from "react-native";
-import { StackScreenProps } from "@react-navigation/stack";
+import React from 'react';
+import {ActivityIndicator, Button, Text, View} from 'react-native';
+import {StackScreenProps} from '@react-navigation/stack';
 
-import useMovies from "../hooks/useMovies.tsx";
+import useMovies from '../hooks/useMovies.tsx';
 
-interface Props extends StackScreenProps<any, any> {
-};
+interface Props extends StackScreenProps<any, any> {}
 
 const HomeScreen = (props: Props) => {
-  const { navigation } = props;
+  const {navigation} = props;
 
-  const { nowPlaying, isLoading } = useMovies();
+  const {nowPlaying, isLoading} = useMovies();
 
   if (isLoading) {
     return (
@@ -27,7 +26,7 @@ const HomeScreen = (props: Props) => {
       <Button
         title="go to detail"
         onPress={() => {
-          navigation.navigate("DetailScreen");
+          navigation.navigate('DetailScreen');
         }}
       />
     </View>
