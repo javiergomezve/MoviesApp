@@ -1,13 +1,17 @@
 import React from 'react';
-import {ActivityIndicator, Button, Text, View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import useMovies from '../hooks/useMovies.tsx';
+import MoviePoster from '../components/MoviePoster.tsx';
 
 interface Props extends StackScreenProps<any, any> {}
 
 const HomeScreen = (props: Props) => {
   const {navigation} = props;
+
+  const {top} = useSafeAreaInsets();
 
   const {nowPlaying, isLoading} = useMovies();
 
@@ -20,15 +24,8 @@ const HomeScreen = (props: Props) => {
   }
 
   return (
-    <View>
-      <Text>Home screen</Text>
-
-      <Button
-        title="go to detail"
-        onPress={() => {
-          navigation.navigate('DetailScreen');
-        }}
-      />
+    <View style={{marginTop: top + 20}}>
+      <MoviePoster movie={nowPlaying[1]} />
     </View>
   );
 };
