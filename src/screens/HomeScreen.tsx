@@ -24,7 +24,7 @@ const HomeScreen = (props: Props) => {
 
   const {top} = useSafeAreaInsets();
 
-  const {nowPlaying, isLoading} = useMovies();
+  const {nowPlaying, popular, topRated, upcoming, isLoading} = useMovies();
 
   if (isLoading) {
     return (
@@ -48,11 +48,11 @@ const HomeScreen = (props: Props) => {
           inactiveSlideOpacity={0.9}
         />
 
-        <HorizontalSlider movies={nowPlaying} title="In cine" />
+        <HorizontalSlider movies={popular} title="Popular" />
 
-        <HorizontalSlider movies={nowPlaying} title="Hot" />
+        <HorizontalSlider movies={topRated} title="Top Rated" />
 
-        <HorizontalSlider movies={nowPlaying} title="Rotten tomatos" />
+        <HorizontalSlider movies={upcoming} title="Upcoming" />
       </View>
     </ScrollView>
   );

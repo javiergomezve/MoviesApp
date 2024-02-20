@@ -12,7 +12,6 @@ const HorizontalSlider = ({title, movies}: Props) => {
   return (
     <View
       style={{
-        backgroundColor: 'red',
         paddingVertical: 10,
         paddingHorizontal: 15,
       }}>
