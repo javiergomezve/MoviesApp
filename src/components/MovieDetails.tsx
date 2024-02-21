@@ -56,7 +56,7 @@ const MovieDetails = (props: Props) => {
             data={cast}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
-              <View style={{marginRight: 20}}>
+              <View style={{marginRight: 20, marginLeft: 7}}>
                 <CastItem actor={item} />
               </View>
             )}
